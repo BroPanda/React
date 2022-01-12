@@ -18,7 +18,8 @@ const Flights = () => {
             {flights.map(flight =>
                 <div>
                     {flight.flight_number} {flight.mission_name} {flight.launch_year}
-                    <img src={flight.mission_patch_small} alt="mission_patch_small"/>
+                    <img src={flight.mission_patch} alt="mission_patch"/>
+                    <hr/>
                 </div>
             )}
         </div>
