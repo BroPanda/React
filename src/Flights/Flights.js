@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from 'react';
+import '../App.css'
+import Flight from "./Flight";
 
 const Flights = () => {
 
@@ -15,13 +17,7 @@ const Flights = () => {
 
     return (
         <div>
-            {flights.map(flight =>
-                <div>
-                    {flight.flight_number} {flight.mission_name} {flight.launch_year}
-                    <img src={flight.mission_patch} alt="mission_patch"/>
-                    <hr/>
-                </div>
-            )}
+            {flights.map(flight =><Flight key={flight.flight_number} flight={flight}/>)}
         </div>
     );
 };

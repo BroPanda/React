@@ -1,11 +1,5 @@
-import Flights from "./Flyghts/Flyghts";
-
-
+import Flights from "./Flights/Flights";
 const App = () => {
-
-
-
-
     return (
         <div>
             <Flights/>
