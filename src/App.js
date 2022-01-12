@@ -1,5 +1,6 @@
 import React from 'react';
-import s from 'src/App.css'
+import s from './App.module.css'
+
 import Users from "./Components/Users/Users";
 import Posts from "./Components/Posts/Posts";
 import Comments from "./Components/Comments/Comments";
