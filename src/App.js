@@ -1,17 +1,14 @@
-import React, {useEffect} from 'react';
+import Flights from "./Flyghts/Flyghts";
+
 
 const App = () => {
 
-    useEffect(() =>
-        fetch(`https://api.spacexdata.com/v3/launches/`)
-            .then(data => data.json())
-            .then(value => value.log)
-    )
+
 
 
     return (
         <div>
-
+            <Flights/>
         </div>
     );
 };
