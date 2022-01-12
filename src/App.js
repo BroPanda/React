@@ -1,16 +1,12 @@
 import React from 'react';
 
 import './App.css';
-import Simpson from "./Components/Simpson";
+import Users from "./Components/Users/Users";
 
 const App = () => {
     return (
         <div>
-
-            <Simpson name={`lisa`} age={11}/>
-            <Simpson name={`bart`} age={1111111}/>
-
-
+            <Users/>
 
         </div>
     );
