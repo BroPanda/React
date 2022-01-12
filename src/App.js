@@ -1,12 +1,18 @@
 import React from 'react';
-
-import './App.css';
+import s from 'src/App.css'
 import Users from "./Components/Users/Users";
+import Posts from "./Components/Posts/Posts";
+import Comments from "./Components/Comments/Comments";
 
 const App = () => {
     return (
         <div>
-            <Users/>
+            <div className={s.head}>
+                <Users/>
+                <Posts/>
+            </div>
+
+            <Comments/>
 
         </div>
     );
