@@ -1,18 +1,21 @@
 import React, {useEffect, useState} from 'react';
-import {userService} from "../../services/user.services";
-import {urls} from "../../config/urls";
 
-const UserComments = ({userIdPosts}) => {
-    const [comments, setComments] = useState(null);
+import {userService} from "../../../services/user.services";
+import {urls} from "../../../config/urls";
+import style from './user_posts.module.css'
+
+const UserPosts = ({userIdPosts}) => {
+    const [posts, setPosts] = useState(null);
 
     useEffect(() => {
         userService.getUserPostsById(urls.users, userIdPosts)
-            .then(posts => setComments(posts))
+            .then(posts => setPosts(posts))
     }, [userIdPosts])
 
+    console.log(style.p10);
     return (
-        <div >
-            {comments && comments.map(post =>
+        <div className={`${style.p10}`}>
+            {posts && posts.map(post =>
                 <div key={post.id}>
                     <h4>User ID {post.userId}</h4>
                     <h3>{post.id} {post.title}</h3>
@@ -24,4 +27,4 @@ const UserComments = ({userIdPosts}) => {
     );
 };
 
-export default UserComments;
+export default UserPosts;

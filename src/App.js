@@ -2,11 +2,11 @@ import React, {useEffect, useState} from 'react';
 
 
 import Users from "./components/Users/Users";
-import UserDetails from "./components/UserDetails/UserDetails";
+import UserDetails from "./components/Users/UserDetails/UserDetails";
 import {userService} from "./services/user.services";
 import {urls} from "./config/urls";
 import s from './App.module.css'
-import UserComments from "./components/UserComments/UserComments";
+import UserPosts from "./components/Users/UserPosts/UserPosts";
 
 const App = () => {
     let [users, setUsers] = useState(null);
@@ -31,7 +31,7 @@ const App = () => {
                 {userId && <UserDetails users={users} userId={userId} setUserIdPosts={setUserIdPosts}/>}
             </div>
             <div>
-                {userIdPosts && <UserComments userIdPosts={userIdPosts}/>}
+                {userIdPosts && <UserPosts userIdPosts={userIdPosts}/>}
             </div>
         </div>
 
