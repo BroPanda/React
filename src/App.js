@@ -22,8 +22,6 @@ const App = () => {
         setUserId(id);
     }
 
-    console.log(userId, userIdPosts)
-
     return (
         <div className={`${s.container}`}>
             <div className={`${s.d_flex}`}>
