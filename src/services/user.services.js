@@ -3,12 +3,12 @@ const getAllUsers = (url) => {
         .then(data => data.json())
 }
 
-const getUserById = (url, id) => {
-    return fetch(`${url}${id}`)
+const getUserPostsById = (url, id) => {
+    return fetch(`${url}/${id}/posts`)
         .then(data => data.json())
 }
 
 export const userService = {
     getAllUsers,
-    getUserById
+    getUserPostsById
 }
