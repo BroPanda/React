@@ -1,0 +1,9 @@
+.d_flex {
+    display: flex;
+}
+
+.container{
+    width: 980px;
+    background: #879a90;
+    margin: 0 auto;
+}

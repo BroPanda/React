@@ -3,7 +3,6 @@ import React from 'react';
 const User = ({user: {id, name}, getUserID}) => {
 
     let checkID = () => {
-        console.log(id);
         getUserID(id)
     }
 
