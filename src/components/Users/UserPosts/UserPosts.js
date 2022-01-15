@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 import {userService} from "../../../services/user.services";
 import {urls} from "../../../config/urls";
-import style from './user_posts.module.css'
+import style from './userPosts.module.css'
 
 const UserPosts = ({userIdPosts}) => {
     const [posts, setPosts] = useState(null);
@@ -12,7 +12,7 @@ const UserPosts = ({userIdPosts}) => {
             .then(posts => setPosts(posts))
     }, [userIdPosts])
 
-    console.log(style.p10);
+    console.log(`${style.p10}`);
     return (
         <div className={`${style.p10}`}>
             {posts && posts.map(post =>
