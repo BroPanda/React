@@ -3,6 +3,10 @@ import React, {useReducer} from 'react';
 const App = () => {
 
     const reducer = (state, action) => {
+        switch (action.type) {
+            case 'inc':
+                return {count1: state.count1 + 1}
+        }
         return state;
     }
 
@@ -11,9 +15,9 @@ const App = () => {
 
     return (<>
         <div>{state.count1}</div>
-        <button onClick={dispatch({type: 'inc'})}>inc</button>
-        <button onClick={dispatch({type: 'dec'})}>dec</button>
-        <button onClick={dispatch({type: 'res'})}>res</button>
+        <button onClick={() => dispatch({type: 'inc'})}>inc</button>
+        <button onClick={() => dispatch({type: 'dec'})}>dec</button>
+        <button onClick={() => dispatch({type: 'res'})}>res</button>
     </>);
 };
 
