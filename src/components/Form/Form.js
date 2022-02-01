@@ -1,17 +1,24 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useForm} from "react-hook-form";
 
 import {carService} from "../../services/car.service";
 
-const Form = ({flag, setFlag}) => {
-    const {register, handleSubmit, watch, reset, formState: {errors}} = useForm();
+const Form = ({flag, setFlag, updateId,setUpdateId}) => {
+    const {register, handleSubmit, watch, reset, formState: {errors}, getValues} = useForm();
     const [err, setErr] = useState({});
 
+    const value = getValues();
+
+    useEffect(() => {
+        if (updateId){
+            carService.updateById(updateId, value).then(value => setFlag(!flag))
+            setUpdateId(null)
+        }
+    },[updateId])
 
     const submit = (data) => {
         setErr({})
-        carService.create(data).then(value => console.log(value)).catch(errors => setErr(errors.response.data));
-        setFlag(!flag)
+        carService.create(data).then(value => setFlag(!flag)).catch(errors => setErr(errors.response.data));
         reset();
     }
 
