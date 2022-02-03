@@ -2,19 +2,29 @@ import React, {useEffect, useState} from 'react';
 import {useForm} from "react-hook-form";
 
 import {carService} from "../../services/car.service";
+import {joiResolver} from "@hookform/resolvers/joi";
+import {carValidator} from "../../validators/car.validator";
 
-const Form = ({flag, setFlag, updateId,setUpdateId}) => {
-    const {register, handleSubmit, watch, reset, formState: {errors}, getValues} = useForm();
+const Form = ({flag, setFlag, updateId, setUpdateId}) => {
+    const {
+        register,
+        handleSubmit,
+        watch,
+        reset,
+        formState: {errors},
+        getValues
+    } = useForm({resolver: joiResolver(carValidator)});
+
     const [err, setErr] = useState({});
 
     const value = getValues();
 
     useEffect(() => {
-        if (updateId){
+        if (updateId) {
             carService.updateById(updateId, value).then(value => setFlag(!flag))
             setUpdateId(null)
         }
-    },[updateId])
+    }, [updateId])
 
     const submit = (data) => {
         setErr({})
