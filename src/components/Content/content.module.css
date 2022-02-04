@@ -1,0 +1,12 @@
+.content {
+    width: 80%;
+    background-color: #c0d5fc;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.block1 {
+    flex-grow: 1
+}

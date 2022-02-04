@@ -1,13 +1,15 @@
 import React from 'react';
-
-import './App.css';
+import Header from "./components/Header/Header";
+import css from './App.module.css'
+import Content from "./components/Content/Content";
 
 const App = () => {
     return (
-        <div>
+        <div className={css.app}>
+                <Header/>
 
-        </div>
-    );
+                <Content/>
+        </div>);
 };
 
 export default App;
